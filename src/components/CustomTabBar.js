@@ -4,14 +4,18 @@ import HomeIcon from '../assets/svg/home.svg';
 import CategoriesIcon from '../assets/svg/menu-grid.svg';
 import CartIcon from '../assets/svg/shopping-basket.svg';
 import ProfileIcon from '../assets/svg/user.svg';
+import {View} from 'react-native';
 
 import {lightDefaultColor, gray500} from '../styles';
 
 const CustomTabBarContainer = styled.View`
     flex-direction: row;
     background: #fff;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-width: 1px;
+    border-bottom-width: 0;
+    border-color: #ddd;
     height: 62px;
     padding: 0 5px;
 `;
@@ -38,7 +42,8 @@ export default ({ state, descriptors, navigation, index }) => {          /** Pro
     }
 
     return (
-        <CustomTabBarContainer>
+        <View style={{backgroundColor: '#fff'}}>
+            <CustomTabBarContainer>
             <CustomTabBarTouch key={index} onPress={() => goTo('home')}>
                 <CustomTabBarPressed background={state.index == 0 && lightDefaultColor} >
                     <HomeIcon fill={state.index == 0 ? '#fff' : gray500} width="23px" height="23px"/>
@@ -75,5 +80,6 @@ export default ({ state, descriptors, navigation, index }) => {          /** Pro
                     </CustomTabBarPressed>
             </CustomTabBarTouch>
         </CustomTabBarContainer>
+        </View>
     );
 }

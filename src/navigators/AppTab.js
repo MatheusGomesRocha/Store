@@ -13,8 +13,9 @@ export default () => {
     return (
         <AppTab.Navigator
         tabBar={(props) => <CustomTabBar {...props} />}
-        tabBarOption={{
-            keyboardHidesTabBar: true
+        tabBarOptions={{
+            keyboardHidesTabBar: true,
+            backgroundColor: 'transparent',
         }}
         >
             <AppTab.Screen name="home" component={HomeScreen} />
