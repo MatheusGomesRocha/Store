@@ -6,11 +6,11 @@ import CartIcon from '../assets/svg/shopping-basket.svg';
 import ProfileIcon from '../assets/svg/user.svg';
 import {View} from 'react-native';
 
-import {defaultColor, gray500, gray100} from '../styles';
+import {white, defaultColor, gray500, gray100} from '../styles';
 
 const CustomTabBarContainer = styled.View`
     flex-direction: row;
-    background: #fff;
+    background: ${white};
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     border-width: 1px;
@@ -44,7 +44,7 @@ export default ({ state, descriptors, navigation, index }) => {          /** Pro
     }
 
     return (
-        <View style={{backgroundColor: '#fff'}}>
+        <View style={{backgroundColor: white}}>
             <CustomTabBarContainer>
 
                 <CustomTabBarTouch key={index} onPress={() => goTo('home')}>
