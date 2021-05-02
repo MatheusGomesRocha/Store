@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 import WatchPng from '../../assets/img/watch.png';
 import SearchIcon from '../../assets/svg/search.svg';
@@ -34,23 +34,24 @@ import {
     FlashSaleDiscountView,
     FlashSaleDiscountText,
 
-    RecentlyViewedArea,
-    RecentlyViewedTitle,
-    RecentlyViewedArray,
-    RecentlyViewedItem,
-    RecentlyViewedImg,
-    RecentlyViewedName,
-    RecentlyViewedPrice,
-    RecentlyViewedFavoriteBtn
+    ProductsArea,
+    ProductsFilter,
+    ProductsFilterText,
+    ProductsArray,
+    ProductsItem,
+    ProductsImg,
+    ProductsName,
+    ProductsPrice,
+    ProductsFavoriteBtn
 } from './styles';
-import { gray200, gray800 } from '../../styles';
+import { defaultColor, gray200, gray800 } from '../../styles';
 
 
 export default function Home() {
     const productArray = [
-        {id: 1, img: '../../assets/img/watch.png', name: 'Apple Watch', price: 185.41},
+        {id: 1, img: '../../assets/img/watch.png', name: 'Apple Watch', price: 185.41, marginTop: -50},
         {id: 2, img: '../../assets/img/watch.png', name: 'Apple Watch', price: 185.41},
-        {id: 3, img: '../../assets/img/watch.png', name: 'Apple Watch', price: 185.41},
+        {id: 3, img: '../../assets/img/watch.png', name: 'Apple Watch', price: 185.41, marginTop: -50},
         {id: 4, img: '../../assets/img/watch.png', name: 'Apple Watch', price: 185.41},
     ];
 
@@ -116,22 +117,42 @@ export default function Home() {
                     </ScrollView>
                 </FlashSaleArea>
 
-                <RecentlyViewedArea>
-                    <RecentlyViewedTitle>Recently Viewed</RecentlyViewedTitle>
-                    <RecentlyViewedArray>
-                        {productArray.map((item, k) => (
-                            <RecentlyViewedItem style={{backgroundColor: backgroundColors[Math.floor(Math.random() * backgroundColors.length)]}} key={k}>
-                                <RecentlyViewedImg source={require('../../assets/img/dress2.png')} />
+                <ProductsArea>
+                    <ScrollView horizontal={true} contentContainerStyle={{marginVertical: 10, paddingHorizontal: 5}}>
+                            <ProductsFilter style={{backgroundColor: defaultColor}}>
+                                <ProductsFilterText style={{color: '#fff'}}>All</ProductsFilterText>
+                            </ProductsFilter>
+                            <ProductsFilter>
+                                <ProductsFilterText>Top</ProductsFilterText>
+                            </ProductsFilter>
+                            <ProductsFilter>
+                                <ProductsFilterText>Recomended</ProductsFilterText>
+                            </ProductsFilter>
+                            <ProductsFilter>
+                                <ProductsFilterText>Most Viewed</ProductsFilterText>
+                            </ProductsFilter>
+                            <ProductsFilter>
+                                <ProductsFilterText>Low Price</ProductsFilterText>
+                            </ProductsFilter>
+                    </ScrollView>
 
-                                <RecentlyViewedName>{item.name}</RecentlyViewedName>
-                                <RecentlyViewedPrice>R$ {item.price}</RecentlyViewedPrice>
-                                <RecentlyViewedFavoriteBtn>
-                                    <FavoriteIcon fill={gray800} width="25px" height="25px" />
-                                </RecentlyViewedFavoriteBtn>
-                            </RecentlyViewedItem>
+                    <ProductsArray>
+                        {productArray.map((item, k) => (
+                            <View key={k} style={{margin: 10, width: '45%', marginTop: item.marginTop}}>
+                                    <ProductsItem key={k}>
+                                        <ProductsImg source={require('../../assets/img/dress2.png')} />
+
+                                        <ProductsFavoriteBtn>
+                                            <FavoriteIcon fill={gray800} width="20px" height="20px" />
+                                        </ProductsFavoriteBtn>
+                                    </ProductsItem>
+
+                                    <ProductsName>{item.name}</ProductsName>
+                                    <ProductsPrice>R$ {item.price}</ProductsPrice>
+                            </View>
                         ))}
-                    </RecentlyViewedArray>
-                </RecentlyViewedArea>
+                    </ProductsArray>
+                </ProductsArea>
 
             </ScrollView>
         </HomeContainer>

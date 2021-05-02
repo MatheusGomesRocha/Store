@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { white, gray50, gray100, gray200, gray800, defaultColor } from '../../styles';
+import { white, gray50, gray100, gray200, gray500, gray800, defaultColor } from '../../styles';
 
 export const HomeContainer = styled.SafeAreaView`
     flex: 1;
@@ -140,40 +140,46 @@ export const FlashSaleDiscountText = styled.Text`
 `;
 
 
-export const RecentlyViewedArea = styled.View`
+export const ProductsArea = styled.View`
     margin-top: 25px;
 `;
-export const RecentlyViewedTitle = styled.Text`
-    margin-left: 15px;
-    font-size: 20px;
-`;
-export const RecentlyViewedArray = styled.View`
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 10px;
-`;
-export const RecentlyViewedItem = styled.TouchableOpacity`
+export const ProductsFilter = styled.TouchableOpacity`
+    min-width: 70px;
+    height: 50px;
+    background: ${gray100};
+    border-radius: 50px;
+    padding: 0 20px;
     align-items: center;
     justify-content: center;
-    width: 45%;
-    height: 300px;
-    margin: 10px;
-    border-radius: 15px;
+    margin: 0 5px;
 `;
-export const RecentlyViewedImg = styled.Image`
+export const ProductsFilterText = styled.Text`
+    color: ${gray500};
+`;
+export const ProductsArray = styled.View`
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 70px;
+`;
+export const ProductsItem = styled.TouchableOpacity`
+    border-radius: 15px;
+    background: ${gray100};
+    padding: 10px 0;
+`;
+export const ProductsImg = styled.Image`
     width: 100%;
     height: 220px;
 `;
-export const RecentlyViewedName = styled.Text`
-    color: ${white};
+export const ProductsName = styled.Text`
+    color: ${gray800};
     margin-top: 10px;
 `;
-export const RecentlyViewedPrice = styled.Text`
-    color: ${white};
+export const ProductsPrice = styled.Text`
+    color: ${defaultColor};
     font-weight: bold;
     font-size: 16px;
 `;
-export const RecentlyViewedFavoriteBtn = styled.TouchableOpacity`
+export const ProductsFavoriteBtn = styled.TouchableOpacity`
     position: absolute;
     align-items: center;
     justify-content: center;
