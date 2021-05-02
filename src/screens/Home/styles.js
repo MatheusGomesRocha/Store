@@ -3,7 +3,7 @@ import { white, gray50, gray100, gray200, gray800, defaultColor } from '../../st
 
 export const HomeContainer = styled.SafeAreaView`
     flex: 1;
-    background: ${gray50};
+    background: ${white};
 `;
 
 
@@ -16,7 +16,7 @@ export const DivInputSearch = styled.View`
     flex-direction: row;
     align-items: center;
     flex: 1;
-    background: ${white};
+    background: ${gray50};
     border-radius: 25px;
     height: 56px;
     padding-left: 15px;
@@ -27,7 +27,7 @@ export const Input = styled.TextInput`
     padding-left: 15px;
 `;
 export const ButtonNotification = styled.TouchableOpacity`
-    background: ${white};
+    background: ${gray50};
     border: 1px solid ${gray100};
     align-items: center;
     justify-content: center;
@@ -92,7 +92,7 @@ export const FlashSaleTime = styled.Text`
     font-weight: bold;
 `;
 export const FlashSaleItem = styled.TouchableOpacity`
-    background: ${white};
+    background: ${gray50};
     align-items: center;
     width: 150px;
     height: 220px;
