@@ -107,7 +107,6 @@ export const FlashSaleImgView = styled.View`
     height: 90px;
     border-radius: 50px;
     margin-top: 55px;
-
 `;
 export const FlashSaleImg = styled.Image`
     width: 90px;
@@ -154,12 +153,12 @@ export const RecentlyViewedArray = styled.View`
     margin-top: 10px;
 `;
 export const RecentlyViewedItem = styled.TouchableOpacity`
+    align-items: center;
+    justify-content: center;
     width: 45%;
     height: 300px;
     margin: 10px;
     border-radius: 15px;
-    align-items: center;
-    justify-content: center;
 `;
 export const RecentlyViewedImg = styled.Image`
     width: 100%;
@@ -176,12 +175,12 @@ export const RecentlyViewedPrice = styled.Text`
 `;
 export const RecentlyViewedFavoriteBtn = styled.TouchableOpacity`
     position: absolute;
+    align-items: center;
+    justify-content: center;
+    background: ${white};
     top: 15px;
     right: 15px;
-    background: ${white};
     width: 40px;
     height: 40px;
     border-radius: 20px;
-    align-items: center;
-    justify-content: center;
 `;
