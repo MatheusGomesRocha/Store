@@ -1,5 +1,6 @@
 import React from 'react';
 import { ScrollView, View } from 'react-native';
+import { useNavigation } from '@react-navigation/core';
 
 import WatchPng from '../../assets/img/watch.png';
 import SearchIcon from '../../assets/svg/search.svg';
@@ -55,7 +56,7 @@ export default function Home() {
         {id: 4, img: '../../assets/img/watch.png', name: 'Apple Watch', price: 185.41},
     ];
 
-    const backgroundColors = ['#F09DAB', '#B3A9D6', '#9FDFEA', '#88EA9B'];
+    const navigation = useNavigation();
 
     return(
         <HomeContainer>
@@ -102,7 +103,7 @@ export default function Home() {
                     </FlashSaleHeader>
                     <ScrollView contentContainerStyle={{marginVertical: 10, paddingHorizontal: 5}} horizontal={true}>
                         {productArray.map((item, k) => (
-                            <FlashSaleItem key={k}>
+                            <FlashSaleItem onPress={() => navigation.navigate('product')} key={k}>
                                 <FlashSaleImgView>
                                     <FlashSaleImg source={require('../../assets/img/watch.png')} />
                                 </FlashSaleImgView>
@@ -139,7 +140,7 @@ export default function Home() {
                     <ProductsArray>
                         {productArray.map((item, k) => (
                             <View key={k} style={{margin: 10, width: '45%', marginTop: item.marginTop}}>
-                                    <ProductsItem key={k}>
+                                    <ProductsItem onPress={() => navigation.navigate('product')} key={k}>
                                         <ProductsImg source={require('../../assets/img/dress2.png')} />
 
                                         <ProductsFavoriteBtn>

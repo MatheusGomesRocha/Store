@@ -1,11 +1,10 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import CustomTabBar from '../components/CustomTabBar';      /** Import para a TabBar Customizada */
-import HomeScreen from '../screens/Home';
+import ProductStack from './ProductStack';
 import CartScreen from '../screens/Cart';
 import CategoriesScreen from '../screens/Categories';
 import ProfileScreen from '../screens/Profile';
-
 
 const AppTab = createBottomTabNavigator();
 
@@ -18,7 +17,7 @@ export default () => {
             backgroundColor: 'transparent',
         }}
         >
-            <AppTab.Screen name="home" component={HomeScreen} />
+            <AppTab.Screen name="home" component={ProductStack} />
             <AppTab.Screen name="categories" component={CategoriesScreen} />
             <AppTab.Screen name="cart" component={CartScreen} />
             <AppTab.Screen name="profile" component={ProfileScreen} />
