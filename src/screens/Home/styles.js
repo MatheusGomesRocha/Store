@@ -10,7 +10,7 @@ export const HomeContainer = styled.SafeAreaView`
 export const Header = styled.View`
     flex-direction: row;
     align-items: center;
-    margin: 20px 15px 10px 15px;
+    margin: 20px 10px 10px 10px;
 `;
 export const DivInputSearch = styled.View`
     flex-direction: row;
@@ -34,7 +34,7 @@ export const ButtonNotification = styled.TouchableOpacity`
     height: 56px;
     width: 56px;
     border-radius: 28px;
-    margin-left: 15px;
+    margin-left: 10px;
 `;
 
 
@@ -42,7 +42,7 @@ export const PromotionArea = styled.View`
     background: ${defaultColor};
     flex-direction: row;
     justify-content: space-between;
-    margin: 10px 15px;
+    margin: 10px;
     border-radius: 20px;
     height: 180px;
     padding: 0 5px 0 15px;
@@ -68,10 +68,9 @@ export const FlashSaleHeader = styled.View`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 15px;
+    margin: 10px;
 `;
 export const FlashSaleTitle = styled.Text`
-    font-weight: bold;
     font-size: 20px;
 `;
 export const FlashSaleClosingIn = styled.View`
@@ -92,15 +91,12 @@ export const FlashSaleCount = styled.View`
 export const FlashSaleTime = styled.Text`
     font-weight: bold;
 `;
-export const FlashSaleScroll = styled.ScrollView`
-`;
 export const FlashSaleItem = styled.TouchableOpacity`
     background: ${white};
     align-items: center;
-    position: relative;
     width: 150px;
     height: 220px;
-    margin: 0 10px;
+    margin: 0 5px;
     border-radius: 15px;
 `;
 export const FlashSaleImgView = styled.View`
@@ -142,4 +138,50 @@ export const FlashSaleDiscountView = styled.View`
 `;
 export const FlashSaleDiscountText = styled.Text`
     color: ${defaultColor};
+`;
+
+
+export const RecentlyViewedArea = styled.View`
+    margin-top: 25px;
+`;
+export const RecentlyViewedTitle = styled.Text`
+    margin-left: 15px;
+    font-size: 20px;
+`;
+export const RecentlyViewedArray = styled.View`
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 10px;
+`;
+export const RecentlyViewedItem = styled.TouchableOpacity`
+    width: 45%;
+    height: 300px;
+    margin: 10px;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+`;
+export const RecentlyViewedImg = styled.Image`
+    width: 100%;
+    height: 220px;
+`;
+export const RecentlyViewedName = styled.Text`
+    color: ${white};
+    margin-top: 10px;
+`;
+export const RecentlyViewedPrice = styled.Text`
+    color: ${white};
+    font-weight: bold;
+    font-size: 16px;
+`;
+export const RecentlyViewedFavoriteBtn = styled.TouchableOpacity`
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: ${white};
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
 `;

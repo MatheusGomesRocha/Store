@@ -1,8 +1,11 @@
 import React from 'react';
+import { ScrollView } from 'react-native';
 
 import WatchPng from '../../assets/img/watch.png';
 import SearchIcon from '../../assets/svg/search.svg';
 import NotificationIcon from '../../assets/svg/bell.svg';
+import FavoriteIcon from '../../assets/svg/heart.svg';
+
 import {
     HomeContainer,
 
@@ -23,26 +26,35 @@ import {
     FlashSaleClosingInText,
     FlashSaleCount,
     FlashSaleTime,
-    FlashSaleScroll,
     FlashSaleItem,
     FlashSaleImgView,
     FlashSaleImg,
     FlashSaleName,
     FlashSalePrice,
     FlashSaleDiscountView,
-    FlashSaleDiscountText
-} from './styles';
+    FlashSaleDiscountText,
 
+    RecentlyViewedArea,
+    RecentlyViewedTitle,
+    RecentlyViewedArray,
+    RecentlyViewedItem,
+    RecentlyViewedImg,
+    RecentlyViewedName,
+    RecentlyViewedPrice,
+    RecentlyViewedFavoriteBtn
+} from './styles';
 import { gray200, gray800 } from '../../styles';
-import { ScrollView } from 'react-native';
+
 
 export default function Home() {
-    const flashSaleArray = [
+    const productArray = [
         {id: 1, img: '../../assets/img/watch.png', name: 'Apple Watch', price: 185.41},
         {id: 2, img: '../../assets/img/watch.png', name: 'Apple Watch', price: 185.41},
         {id: 3, img: '../../assets/img/watch.png', name: 'Apple Watch', price: 185.41},
         {id: 4, img: '../../assets/img/watch.png', name: 'Apple Watch', price: 185.41},
     ];
+
+    const backgroundColors = ['#F09DAB', '#B3A9D6', '#9FDFEA', '#88EA9B'];
 
     return(
         <HomeContainer>
@@ -87,8 +99,8 @@ export default function Home() {
 
                         </FlashSaleClosingIn>
                     </FlashSaleHeader>
-                    <FlashSaleScroll contentContainerStyle={{marginVertical: 10, paddingHorizontal: 5}} horizontal={true}>
-                        {flashSaleArray.map((item, k) => (
+                    <ScrollView contentContainerStyle={{marginVertical: 10, paddingHorizontal: 5}} horizontal={true}>
+                        {productArray.map((item, k) => (
                             <FlashSaleItem key={k}>
                                 <FlashSaleImgView>
                                     <FlashSaleImg source={require('../../assets/img/watch.png')} />
@@ -101,8 +113,25 @@ export default function Home() {
                                 </FlashSaleDiscountView>
                             </FlashSaleItem>
                         ))}
-                    </FlashSaleScroll>
+                    </ScrollView>
                 </FlashSaleArea>
+
+                <RecentlyViewedArea>
+                    <RecentlyViewedTitle>Recently Viewed</RecentlyViewedTitle>
+                    <RecentlyViewedArray>
+                        {productArray.map((item, k) => (
+                            <RecentlyViewedItem style={{backgroundColor: backgroundColors[Math.floor(Math.random() * backgroundColors.length)]}} key={k}>
+                                <RecentlyViewedImg source={require('../../assets/img/dress2.png')} />
+
+                                <RecentlyViewedName>{item.name}</RecentlyViewedName>
+                                <RecentlyViewedPrice>R$ {item.price}</RecentlyViewedPrice>
+                                <RecentlyViewedFavoriteBtn>
+                                    <FavoriteIcon fill={gray800} width="25px" height="25px" />
+                                </RecentlyViewedFavoriteBtn>
+                            </RecentlyViewedItem>
+                        ))}
+                    </RecentlyViewedArray>
+                </RecentlyViewedArea>
 
             </ScrollView>
         </HomeContainer>
