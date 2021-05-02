@@ -4,14 +4,13 @@ import {white, gray100, gray800} from '../../styles';
 
 export const CategoryContainer = styled.SafeAreaView`
     background: ${white};
-    padding: 20px 0;
 `;
 export const CategoryTitle = styled.Text`
     font-weight: bold;
+    text-align: center;
     font-size: 22px;
     width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
+    margin: 20px 0;
 `;
 export const CategoryItem = styled.TouchableOpacity`
     background: ${gray100};

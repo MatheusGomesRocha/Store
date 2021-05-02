@@ -28,13 +28,12 @@ export default function Home() {
 
     return (
         <CategoryContainer>
-            <CategoryTitle>Categories</CategoryTitle>
             
             <FlatList
+                ListHeaderComponent={<CategoryTitle>Categories</CategoryTitle>}
                 data={categoryArray}
                 renderItem={({ item }) => <CategoryComponent item={item} />}
                 keyExtractor={(item) => item.id}
-                contentContainerStyle={{paddingBottom: 40}}
             />
         </CategoryContainer>
     )
