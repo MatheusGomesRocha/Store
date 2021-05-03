@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {white, gray500, gray800, defaultColor, gray200, gray100} from '../../styles';
+import {white, gray100, gray200, gray500, gray800} from '../../styles';
 
 export const ProductContainer = styled.SafeAreaView`
     background: ${white};
@@ -16,9 +16,11 @@ export const InfoArea = styled.View`
     padding: 30px;
     border-top-left-radius:  50px;
     border-top-right-radius: 50px;
-    margin-top: -40px;
+    margin-top: -150px;
     background: ${white};
     flex: 1;
+    border: 1px solid ${gray200};
+    border-bottom-width: 0;
 `;
 export const InfoHeader = styled.View`
     flex-direction: row;
@@ -36,7 +38,7 @@ export const InfoDescription = styled.Text`
     color: ${gray500};
 `;
 export const InfoSelect = styled.View`
-    margin-top: 25px;
+    margin-top: 20px;
 `;
 export const InfoSelectTitle = styled.Text`
     color: ${gray800};
@@ -53,6 +55,19 @@ export const InfoOptionForSelection = styled.TouchableOpacity`
     border-radius: 25px;
     background: ${props=>props.background || gray100};
     margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+`;
+export const InfoOptionSelected = styled.View`
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background: #000;
+    border: 2px solid ${white};
+    opacity: ${props=>props.opacity};
+    position: absolute;
+    top: 0;
+    right: 0;
     align-items: center;
     justify-content: center;
 `;
