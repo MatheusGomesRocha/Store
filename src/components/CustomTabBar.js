@@ -1,23 +1,24 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import HomeIcon from '../assets/svg/home.svg';
-import CategoriesIcon from '../assets/svg/menu-grid.svg';
+import CategoriesIcon from '../assets/svg/layers.svg';
 import CartIcon from '../assets/svg/shopping-basket.svg';
 import ProfileIcon from '../assets/svg/user.svg';
 import {View} from 'react-native';
 
-import {white, defaultColor, gray500, gray100} from '../styles';
+import {white, defaultColor, gray500, gray100, gray200} from '../styles';
 
 const CustomTabBarContainer = styled.View`
     flex-direction: row;
-    background: ${white};
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
+    background: #000;
     border-width: 1px;
     border-bottom-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
     border-color: ${gray100};
-    height: 62px;
-    padding: 0 5px;
+    height: 72px;
+    padding: 0 8px;
+    display: ${props=>props.display || 'flex'};
 `;
 const CustomTabBarTouch = styled.TouchableOpacity`
     align-items: center;
@@ -31,7 +32,7 @@ const CustomTabBarPressed = styled.View`
     flex-direction: row;
 `;
 const Texto = styled.Text`
-    color: ${defaultColor};
+    color: ${white};
     margin-left: 10px;
 `;
 
@@ -44,46 +45,44 @@ export default ({ state, descriptors, navigation, index }) => {          /** Pro
     }
 
     return (
-        <View style={{backgroundColor: white}}>
             <CustomTabBarContainer>
 
                 <CustomTabBarTouch key={index} onPress={() => goTo('home')}>
-                    <CustomTabBarPressed background={state.index == 0 && backgroundPressed} >
-                        <HomeIcon fill={state.index == 0 ? defaultColor : gray500} width="23px" height="23px"/>
-                        {state.index == 0 && 
+                    <CustomTabBarPressed background={state.index === 0 && "rgba(255, 255, 255, 0.2)"} >
+                        <HomeIcon fill={state.index == 0 ? white : gray500} width="23px" height="23px"/>
+                        {state.index == 0 &&
                             <Texto>Home</Texto>
                         }
                     </CustomTabBarPressed>
                 </CustomTabBarTouch>
 
-                <CustomTabBarTouch key={index} onPress={() => goTo('categories')}>
-                        <CustomTabBarPressed background={state.index == 1 && backgroundPressed} >
-                            <CategoriesIcon fill={state.index == 1 ? defaultColor : gray500} width="23px" height="23px"/>
-                            {state.index == 1 && 
-                                <Texto>Filtros</Texto>
-                            }
-                        </CustomTabBarPressed>
-                </CustomTabBarTouch>
-            
                 <CustomTabBarTouch key={index} onPress={() => goTo('cart')}>
-                        <CustomTabBarPressed background={state.index == 2 && backgroundPressed} >
-                            <CartIcon fill={state.index == 2 ? defaultColor : gray500} width="23px" height="23px"/>
-                            {state.index == 2 && 
-                                <Texto>Carrinho</Texto>
+                    <CustomTabBarPressed background={state.index === 1 && "rgba(255, 255, 255, 0.2)"}>
+                        <CartIcon fill={state.index == 1 ? white : gray500} width="23px" height="23px"/>
+                        {state.index == 1 &&
+                            <Texto>Cart</Texto>
+                        }
+                    </CustomTabBarPressed>
+                </CustomTabBarTouch>
+
+                <CustomTabBarTouch key={index} onPress={() => goTo('categories')}>
+                        <CustomTabBarPressed background={state.index === 2 && "rgba(255, 255, 255, 0.2)"}>
+                            <CategoriesIcon fill={state.index == 2 ? white : gray500} width="23px" height="23px"/>
+                            {state.index == 2 &&
+                                <Texto>Filtros</Texto>
                             }
                         </CustomTabBarPressed>
                 </CustomTabBarTouch>
 
                 <CustomTabBarTouch key={index} onPress={() => goTo('profile')}>
-                        <CustomTabBarPressed background={state.index == 3 && backgroundPressed}>
-                            <ProfileIcon fill={state.index == 3 ? defaultColor : gray500} width="23px" height="23px"/>
-                            {state.index == 3 && 
+                        <CustomTabBarPressed background={state.index === 3 && "rgba(255, 255, 255, 0.2)"}>
+                            <ProfileIcon fill={state.index == 3 ? white : gray500} width="23px" height="23px"/>
+                            {state.index == 3 &&
                                 <Texto>Perfil</Texto>
                             }
                         </CustomTabBarPressed>
                 </CustomTabBarTouch>
 
             </CustomTabBarContainer>
-        </View>
     );
 }

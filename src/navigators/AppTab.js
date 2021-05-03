@@ -18,8 +18,8 @@ export default () => {
         }}
         >
             <AppTab.Screen name="home" component={ProductStack} />
-            <AppTab.Screen name="categories" component={CategoriesScreen} />
             <AppTab.Screen name="cart" component={CartScreen} />
+            <AppTab.Screen name="categories" component={CategoriesScreen} />
             <AppTab.Screen name="profile" component={ProfileScreen} />
         </AppTab.Navigator>
     );
