@@ -37,3 +37,15 @@ export const EmptyCartButtonText = styled.Text`
     color: ${white};
     font-size: 17px;
 `;
+
+
+export const CartArea = styled.View``;
+export const CartTitle = styled.Text``;
+export const CartProductImg = styled.Image``;
+export const CartProductInfo = styled.View``;
+export const CartProductName = styled.Text``;
+export const CartProductCategory = styled.Text``;
+export const CartProductPrice = styled.Text``;
+export const CartQuantity = styled.View``;
+export const CartQuantityChange = styled.Text``;
+export const CartQuantityValue = styled.Text``;
