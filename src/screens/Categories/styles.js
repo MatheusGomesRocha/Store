@@ -4,6 +4,7 @@ import {white, gray100, gray800} from '../../styles';
 
 export const CategoryContainer = styled.SafeAreaView`
     background: ${white};
+    flex: 1;
 `;
 export const CategoryTitle = styled.Text`
     font-weight: bold;

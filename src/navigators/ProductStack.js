@@ -9,7 +9,7 @@ export default () => {
 
     return(
         <ProductStack.Navigator>
-            <ProductStack.Screen name="home" component={HomeScreen} options={{headerTitle: null, headerTransparent: true}}/>
+            <ProductStack.Screen name="home" component={HomeScreen} options={{headerTitle: null, headerTransparent: true, headerLeft: null}}/>
             <ProductStack.Screen name="product" component={ProductScreen} options={{headerTitle: null, headerTransparent: true}}/>
         </ProductStack.Navigator>
     )

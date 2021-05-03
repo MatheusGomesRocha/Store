@@ -1,30 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { StatusBar } from 'react-native';
 
 import FavoriteIcon from '../../assets/svg/heart.svg';
 import CartIcon from '../../assets/svg/shopping-basket.svg';
-{/* <StatusBar translucent={true} backgroundColor="transparent" /> */}
+
+import {
+    ProductContainer,
+
+    HeaderArea,
+    RowButtons,
+    RowDefaultButton,
+
+    InfoArea,
+    InfoHeader,
+    InfoHeaderText,
+    InfoDescription,
+    InfoSelect,
+    InfoSelectTitle,
+    InfoSelectOptions,
+    InfoOptionForSelection,
+    InfoOptionForSelectionText,
+    AddToCartButton,
+    AddToCartText
+} from './styles';
 
 export default function Product() {
+    const [ColorSelected, setColorSelected] = useState(1);
+    const [sizeSelected, setSizeSelected] = useState('M');
+
     return(
         <ProductContainer>
-            <HeaderArea>
-                <ProductImage source={require('../../assets/img/product2.jpg')} />
-                
-                <RowButtons>
-                    <BackButton>
-                        <FavoriteIcon color="#333" height={25} width={25} />
-                    </BackButton>
+            <StatusBar translucent={true} backgroundColor="transparent" /> 
 
-                    <FavoriteButton>
+            <HeaderArea source={require('../../assets/img/product2.jpg')}>
+                <RowButtons>
+                    <RowDefaultButton>
                         <FavoriteIcon color="#333" height={25} width={25} />
-                    </FavoriteButton>
+                    </RowDefaultButton>
+
+                    <RowDefaultButton>
+                        <FavoriteIcon color="#333" height={25} width={25} />
+                    </RowDefaultButton>
                 </RowButtons>
             </HeaderArea>
 
             <InfoArea>
                 <InfoHeader>
-                    <InfoName>Corduroy Cap</InfoName>
-                    <InfoPrice>R$ 36.00</InfoPrice>
+                    <InfoHeaderText>Corduroy Cap</InfoHeaderText>
+                    <InfoHeaderText>R$ 36.00</InfoHeaderText>
                 </InfoHeader>
 
                 <InfoDescription>
@@ -32,28 +55,36 @@ export default function Product() {
                     for both the classic style and for casual style.
                 </InfoDescription>
 
-                <InfoColorSelect>
-                    <InfoColorSelectTile>Color</InfoColorSelectTile>
+                <InfoSelect>
+                    <InfoSelectTitle>Color</InfoSelectTitle>
 
-                    <InfoColorSelectOptions>
-                        <InfoColorOption />
-                        <InfoColorOption />
-                        <InfoColorOption />
-                    </InfoColorSelectOptions>
-                </InfoColorSelect>
+                    <InfoSelectOptions>
+                        <InfoOptionForSelection />
+                        <InfoOptionForSelection />
+                        <InfoOptionForSelection />
+                    </InfoSelectOptions>
+                </InfoSelect>
 
-                <InfoSizeSelect>
-                    <InfoSizeSelectTitle>Size</InfoSizeSelectTitle>
+                <InfoSelect>
+                    <InfoSelectTitle>Size</InfoSelectTitle>
 
-                    <InfoSizeSelectOptions>
-                        <InfoSizeOption>S</InfoSizeOption>
-                        <InfoSizeOption>M</InfoSizeOption>
-                        <InfoSizeOption>L</InfoSizeOption>
-                    </InfoSizeSelectOptions>
-                </InfoSizeSelect>
+                    <InfoSelectOptions>
+                        <InfoOptionForSelection onPress={() => setSizeSelected('S')} background={sizeSelected === 'S' && '#000'}>
+                            <InfoOptionForSelectionText color={sizeSelected === 'S' && '#fff'}>S</InfoOptionForSelectionText>
+                        </InfoOptionForSelection>
+
+                        <InfoOptionForSelection onPress={() => setSizeSelected('M')} background={sizeSelected === 'M' && '#000'}>
+                            <InfoOptionForSelectionText color={sizeSelected === 'M' && '#fff'}>M</InfoOptionForSelectionText>
+                        </InfoOptionForSelection>
+                        
+                        <InfoOptionForSelection onPress={() => setSizeSelected('L')} background={sizeSelected === 'L' && '#000'}>
+                            <InfoOptionForSelectionText color={sizeSelected === 'L' && '#fff'}>L</InfoOptionForSelectionText>
+                        </InfoOptionForSelection>
+                    </InfoSelectOptions>
+                </InfoSelect>
 
                 <AddToCartButton>
-                    <CartIcon color="#fff" width={25} height={25} />
+                    <CartIcon fill="#fff" width={25} height={25} />
                     <AddToCartText>Add to cart</AddToCartText>
                 </AddToCartButton>
             </InfoArea>
