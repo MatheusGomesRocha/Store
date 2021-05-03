@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-import {white, gray100, gray800} from '../../styles';
+import {white, gray100} from '../../styles';
 
 export const CategoryContainer = styled.SafeAreaView`
     background: ${white};

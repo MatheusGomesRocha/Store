@@ -30,6 +30,7 @@ export default function Home() {
         <CategoryContainer>
             
             <FlatList
+                contentContainerStyle={{paddingTop: 40}}
                 ListHeaderComponent={<CategoryTitle>Categories</CategoryTitle>}
                 data={categoryArray}
                 renderItem={({ item }) => <CategoryComponent item={item} />}
