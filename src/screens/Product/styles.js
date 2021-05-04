@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {white, gray100, gray200, gray500, gray800} from '../../styles';
+import {white, gray100, gray200, gray500, gray800, defaultColor} from '../../styles';
 
 export const ProductContainer = styled.SafeAreaView`
     background: ${white};
@@ -17,7 +17,7 @@ export const InfoArea = styled.View`
     flex: 1;
     background: ${white};
     border: 1px solid ${gray200};
-    padding: 30px;
+    padding: 10px 20px 0 20px;
     border-top-left-radius:  50px;
     border-top-right-radius: 50px;
     margin-top: -150px;
@@ -38,6 +38,13 @@ export const InfoDescription = styled.Text`
     margin-top: 15px;
     font-size: 15px;
 `;
+export const RateAndPriceArea = styled.View``;
+export const RateArea = styled.View``;
+export const RateValue = styled.Text``;
+export const RateQuantity = styled.Text``;
+export const PriceArea = styled.View``;
+export const PriceValue = styled.Text``;
+export const PriceOlderValue = styled.Text``;
 export const InfoSelect = styled.View`
     margin-top: 20px;
 `;
@@ -77,14 +84,48 @@ export const InfoOptionForSelectionText = styled.Text`
     font-weight: bold;
     font-size: 17px;
 `;
-export const AddToCartButton = styled.TouchableOpacity`
+export const WhatToDo = styled.View`
     background: #000;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
+    border-radius: 20px;
+    height: 100px;
+    width: 100%;
+    margin-top: 25px;
+`;
+export const SelectQuantity = styled.View`
+    background: rgba(255, 255, 255, 0.2);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100px;
+    height: 50px;
+    border-radius: 60px;
+`;
+export const SelectQuantityValue = styled.Text`
+    color: ${white};
+    font-size: 22px;
+`;
+export const BuyNowButton = styled.TouchableOpacity`
+    background: ${defaultColor};
+    height: 60px;
+    width: 150px;
+    align-items: center;
     justify-content: center;
-    margin-top: auto;
-    height: 62px;
-    border-radius: 10px;
+    border-radius: 50px;
+`;
+export const BuyNowText = styled.Text`
+    color: ${white};
+    font-size: 15px;
+`;
+export const AddToCartButton = styled.TouchableHighlight`
+    justify-content: center;
+    align-items: center;
+    border: 1px solid ${defaultColor};
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
 `;
 export const AddToCartText = styled.Text`
     color: ${white};
