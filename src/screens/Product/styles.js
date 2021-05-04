@@ -121,11 +121,11 @@ export const SaveProductButton = styled.TouchableHighlight`
 `;
 export const AddToCartButton = styled.TouchableOpacity`
     background: ${defaultColor};
+    align-items: center;
+    justify-content: center;
     flex: 1;
     margin-left: 15px;
     border-radius: 15px;
-    align-items: center;
-    justify-content: center;
 `;
 export const AddToCartText = styled.Text`
     color: ${white};

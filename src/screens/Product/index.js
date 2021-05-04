@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { StatusBar, View } from 'react-native';
+import { StatusBar, View, ScrollView} from 'react-native';
+import Swiper from 'react-native-swiper';
 
+import { defaultColor } from '../../styles';
 import StarIcon from '../../assets/svg/star.svg';
 import BookmarkIcon from '../../assets/svg/bookmark.svg';
 import CheckIcon from '../../assets/svg/check.svg';
@@ -32,9 +34,6 @@ import {
     AddToCartButton,
     AddToCartText
 } from './styles';
-import Swiper from 'react-native-swiper';
-import { ScrollView } from 'react-native-gesture-handler';
-import { defaultColor } from '../../styles';
 
 export default function Product() {
     const [colorSelected, setColorSelected] = useState(1);
@@ -141,7 +140,6 @@ export default function Product() {
                 <HeaderArea source={require('../../assets/img/product2.jpg')} />
             </Swiper>
                
-
             <InfoArea>
                 <ScrollView contentContainerStyle={{paddingVertical: 20}}>
                     <InfoHeader>

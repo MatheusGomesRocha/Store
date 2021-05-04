@@ -7,7 +7,6 @@ import AppTab from './AppTab';
 const ProductStack = createStackNavigator();
 
 export default () => {
-
     return(
         <ProductStack.Navigator>
             <ProductStack.Screen name="apptab" component={AppTab} options={{headerTitle: null, headerTransparent: true, headerLeft: null}}/>

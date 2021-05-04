@@ -44,7 +44,7 @@ export default ({ state, descriptors, navigation, index }) => {          /** Pro
     }
 
     return (
-        <View style={{backgroundColor: white}}>
+        <View style={{backgroundColor: state.index == 1 ? '#000' : white}}>
             <CustomTabBarContainer>
 
                 <CustomTabBarTouch key={index} onPress={() => goTo('home')}>
