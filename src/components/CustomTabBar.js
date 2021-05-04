@@ -6,21 +6,20 @@ import CartIcon from '../assets/svg/shopping-basket.svg';
 import ProfileIcon from '../assets/svg/user.svg';
 import {View} from 'react-native';
 
-import {white, defaultColor, gray500, gray100, gray200} from '../styles';
+import {white, gray500, gray100, gray200} from '../styles';
 
 const CustomTabBarContainer = styled.View`
     flex-direction: row;
     background: #000;
+    display: ${props=>props.display || 'flex'};
     border-width: 1px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-width: 0;
     border-left-width: 0;
     border-right-width: 0;
-    border-color: ${gray100};
     height: 72px;
     padding: 0 8px;
-    display: ${props=>props.display || 'flex'};
 `;
 const CustomTabBarTouch = styled.TouchableOpacity`
     align-items: center;
@@ -29,16 +28,14 @@ const CustomTabBarTouch = styled.TouchableOpacity`
 `;
 const CustomTabBarPressed = styled.View`
     background: ${props=>props.background || 'transparent'};
+    flex-direction: row;
     padding: 10px 15px;
     border-radius: 20px;
-    flex-direction: row;
 `;
 const Texto = styled.Text`
     color: ${white};
     margin-left: 10px;
 `;
-
-const backgroundPressed = '#F8DAD6';
 
 export default ({ state, descriptors, navigation, index }) => {          /** Props que vem para facilitar a customização */
 

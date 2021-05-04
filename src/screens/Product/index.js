@@ -2,17 +2,13 @@ import React, { useState } from 'react';
 import { StatusBar, View } from 'react-native';
 
 import StarIcon from '../../assets/svg/star.svg';
-import CartIcon from '../../assets/svg/shopping-basket.svg';
+import BookmarkIcon from '../../assets/svg/bookmark.svg';
 import CheckIcon from '../../assets/svg/check.svg';
-import AngleDownIcon from '../../assets/svg/angle_down.svg';
-import { defaultColor } from '../../styles';
 
 import {
     ProductContainer,
 
     HeaderArea,
-    RowButtons,
-    RowDefaultButton,
 
     InfoArea,
     InfoHeader,
@@ -31,16 +27,14 @@ import {
     InfoOptionForSelection,
     InfoOptionSelected,
     InfoOptionForSelectionText,
-    WhatToDo,
-    SelectQuantity,
-    SelectQuantityValue,
-    BuyNowButton,
-    BuyNowText,
+    RowButtons,
+    SaveProductButton,
     AddToCartButton,
     AddToCartText
 } from './styles';
 import Swiper from 'react-native-swiper';
 import { ScrollView } from 'react-native-gesture-handler';
+import { defaultColor } from '../../styles';
 
 export default function Product() {
     const [colorSelected, setColorSelected] = useState(1);
@@ -123,7 +117,7 @@ export default function Product() {
                         marginLeft: 3,
                         marginRight: 3,
                         marginTop: 3,
-                        marginBottom: 140
+                        marginBottom: 190
                       }}
                     />
                 }
@@ -137,7 +131,7 @@ export default function Product() {
                         marginLeft: 3,
                         marginRight: 3,
                         marginTop: 3,
-                        marginBottom: 140
+                        marginBottom: 190
                       }}
                     />
                 }
@@ -152,7 +146,6 @@ export default function Product() {
                 <ScrollView contentContainerStyle={{paddingVertical: 20}}>
                     <InfoHeader>
                         <InfoHeaderText>Corduroy Cap</InfoHeaderText>
-                        <InfoHeaderText>R$ 36.00</InfoHeaderText>
                     </InfoHeader>
 
                     <InfoDescription>
@@ -168,27 +161,22 @@ export default function Product() {
                         </RateArea>
 
                         <PriceArea>
-                            <PriceValue>R$ 99</PriceValue>
+                            <PriceValue>R$ 99,90</PriceValue>
                             <PriceOlderValue>R$ 120</PriceOlderValue>
                         </PriceArea>
                     </RateAndPriceArea>
 
                     <InfoSelectComponent />
 
-                    <WhatToDo>
-                        <SelectQuantity>
-                            <SelectQuantityValue>5</SelectQuantityValue>
-                            <AngleDownIcon fill="#fff" height={20} width={20} />
-                        </SelectQuantity>
+                    <RowButtons>
+                        <SaveProductButton underlayColor={defaultColor} onPress={() => console.log('olá mundo')}>
+                            <BookmarkIcon fill="#000" width={25} height={25} />
+                        </SaveProductButton>
                         
-                        <BuyNowButton>
-                            <BuyNowText>R$ 270 | Buy Now</BuyNowText>
-                        </BuyNowButton>
-
-                        <AddToCartButton underlayColor={defaultColor}  onPress={() => console.log('olá mundo')}>
-                            <CartIcon fill="#fff" width={30} height={30} />
+                        <AddToCartButton>
+                            <AddToCartText>Add to Cart</AddToCartText>
                         </AddToCartButton>
-                    </WhatToDo>
+                    </RowButtons>
                 </ScrollView>
             </InfoArea>
         </ProductContainer>

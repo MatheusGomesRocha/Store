@@ -7,10 +7,8 @@ export const ProductContainer = styled.SafeAreaView`
 `;
 
 export const HeaderArea = styled.ImageBackground`
-    height: 320px;
+    height: 345px;
 `;
-export const RowButtons = styled.View``;
-export const RowDefaultButton = styled.TouchableOpacity``;
 
 
 export const InfoArea = styled.View`
@@ -20,7 +18,7 @@ export const InfoArea = styled.View`
     padding: 10px 20px 0 20px;
     border-top-left-radius:  50px;
     border-top-right-radius: 50px;
-    margin-top: -150px;
+    margin-top: -200px;
     border-bottom-width: 0;
 `;
 export const InfoHeader = styled.View`
@@ -30,21 +28,46 @@ export const InfoHeader = styled.View`
 `;
 export const InfoHeaderText = styled.Text`
     color: ${gray800};
-    font-weight: bold;
-    font-size: 17px;
+    font-size: 25px;
 `;
 export const InfoDescription = styled.Text`
-    color: ${gray500};
-    margin-top: 15px;
+    color: ${gray200};
+    margin-top: 10px;
     font-size: 15px;
 `;
-export const RateAndPriceArea = styled.View``;
-export const RateArea = styled.View``;
-export const RateValue = styled.Text``;
-export const RateQuantity = styled.Text``;
-export const PriceArea = styled.View``;
-export const PriceValue = styled.Text``;
-export const PriceOlderValue = styled.Text``;
+export const RateAndPriceArea = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom-width: 1px;
+    border-bottom-color: ${gray100};
+`;
+export const RateArea = styled.View`
+    flex-direction: row;
+    align-items: center;
+`;
+export const RateValue = styled.Text`
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 5px;
+`;
+export const RateQuantity = styled.Text`
+    color: ${gray200};
+    margin-left: 3px;
+`;
+export const PriceArea = styled.View`
+    flex-direction: row;
+    align-items: center;
+`;
+export const PriceValue = styled.Text`
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 5px;
+`;
+export const PriceOlderValue = styled.Text`
+    text-decoration: line-through;
+    color: ${gray200};
+`;
 export const InfoSelect = styled.View`
     margin-top: 20px;
 `;
@@ -84,53 +107,29 @@ export const InfoOptionForSelectionText = styled.Text`
     font-weight: bold;
     font-size: 17px;
 `;
-export const WhatToDo = styled.View`
-    background: #000;
+export const RowButtons = styled.View`
     flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 20px;
-    height: 100px;
-    width: 100%;
-    margin-top: 25px;
+    margin-top: 30px;
 `;
-export const SelectQuantity = styled.View`
-    background: rgba(255, 255, 255, 0.2);
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 100px;
-    height: 50px;
-    border-radius: 60px;
-`;
-export const SelectQuantityValue = styled.Text`
-    color: ${white};
-    font-size: 22px;
-`;
-export const BuyNowButton = styled.TouchableOpacity`
-    background: ${defaultColor};
-    height: 60px;
-    width: 150px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50px;
-`;
-export const BuyNowText = styled.Text`
-    color: ${white};
-    font-size: 15px;
-`;
-export const AddToCartButton = styled.TouchableHighlight`
+export const SaveProductButton = styled.TouchableHighlight`
     justify-content: center;
     align-items: center;
     border: 1px solid ${defaultColor};
     width: 60px;
     height: 60px;
-    border-radius: 30px;
+    border-radius: 15px;
+`;
+export const AddToCartButton = styled.TouchableOpacity`
+    background: ${defaultColor};
+    flex: 1;
+    margin-left: 15px;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
 `;
 export const AddToCartText = styled.Text`
     color: ${white};
-    font-size: 17px;
-    margin-left: 15px;
+    font-size: 20px;
 `;
 
                 
