@@ -89,7 +89,7 @@ export default function Home() {
 
                 <ScrollView horizontal={true}>
                     {productArray.map((item, k) => (
-                        <ProductsItem key={k}>
+                        <ProductsItem key={k} onPress={() => navigation.navigate('product')}>
                             <ProductsImgContainer>
                                 <ProductsImg resizeMode="center" source={item.img} />
                                 <ProductsFavoriteButton>
@@ -120,7 +120,7 @@ export default function Home() {
 
                 <ScrollView horizontal={true}>
                     {productArray.map((item, k) => (
-                        <ProductsItem key={k}>
+                        <ProductsItem key={k} onPress={() => navigation.navigate('product')}>
                             <ProductsImgContainer>
                                 <ProductsImg resizeMode="center" source={item.img} />
                                 <ProductsFavoriteButton>
@@ -151,7 +151,7 @@ export default function Home() {
 
                 <ScrollView horizontal={true}>
                     {productArray.map((item, k) => (
-                        <ProductsItem key={k}>
+                        <ProductsItem key={k} onPress={() => navigation.navigate('product')}>
                             <ProductsImgContainer>
                                 <ProductsImg resizeMode="center" source={item.img} />
                                 <ProductsFavoriteButton>
