@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { StatusBar, View, ScrollView} from 'react-native';
 import Swiper from 'react-native-swiper';
 
-import { defaultColor } from '../../styles';
+import { defaultColor, lightDefaultColor } from '../../styles';
 import StarIcon from '../../assets/svg/star.svg';
-import BookmarkIcon from '../../assets/svg/bookmark.svg';
+import ShoppingBasketIcon from '../../assets/svg/shopping-basket.svg';
 import CheckIcon from '../../assets/svg/check.svg';
 
 import {
@@ -15,22 +15,24 @@ import {
     InfoArea,
     InfoHeader,
     InfoHeaderText,
-    InfoDescription,
-    RateAndPriceArea,
-    RateArea,
-    RateValue,
-    RateQuantity,
-    PriceArea,
     PriceValue,
-    PriceOlderValue,
-    InfoSelect,
-    InfoSelectTitle,
-    InfoSelectOptions,
-    InfoOptionForSelection,
-    InfoOptionSelected,
-    InfoOptionForSelectionText,
-    RowButtons,
-    SaveProductButton,
+
+    SizeAndColorArea,
+    SizeArea,
+    SizeText,
+    SizeOption,
+    SizeOptionText,
+    ColorArea,
+    ColorOption,
+    ColorOptionIcon,
+
+    FooterArea,
+    DetailsAndReviewButton,
+    DefaultButton,
+    DefaultButtonText,
+    DetailsArea,
+    DetailsDescription,
+
     AddToCartButton,
     AddToCartText
 } from './styles';
@@ -42,61 +44,75 @@ export default function Product() {
     const color1 = '#8257e5';
     const color2 = '#F96332';
     const color3 = '#C94A64';
-    const color4 = '#364156';
 
     const InfoSelectComponent = () => {
         return(
-            <>
-                <InfoSelect>
-                    <InfoSelectTitle>Color</InfoSelectTitle>
+            <SizeAndColorArea>
+                <SizeArea>
+                    <SizeText>Choose Size</SizeText>
 
-                    <InfoSelectOptions>
+                    <View style={{flexDirection: 'row'}}>
+                        <SizeOption border={sizeSelected === 'S' && 'none'} background={sizeSelected === 'S' && '#FCEDEA'} onPress={() => setSizeSelected('S')}>
+                            <SizeOptionText color={sizeSelected === 'S' && defaultColor}>S</SizeOptionText>
+                        </SizeOption>
 
-                        <InfoOptionForSelection onPress={() => setColorSelected(1)} background={color1}>
-                            <InfoOptionSelected opacity={colorSelected === 1 ? 1 : 0}>
-                                <CheckIcon fill="#fff" width={10} height={10} />
-                            </InfoOptionSelected>
-                        </InfoOptionForSelection>
+                        <SizeOption border={sizeSelected === 'M' && 'none'} background={sizeSelected === 'M' && '#FCEDEA'} onPress={() => setSizeSelected('M')}>
+                            <SizeOptionText color={sizeSelected === 'M' && defaultColor}>M</SizeOptionText>
+                        </SizeOption>
 
-                        <InfoOptionForSelection onPress={() => setColorSelected(2)} background={color2}>
-                            <InfoOptionSelected opacity={colorSelected === 2 ? 1 : 0}>
-                                <CheckIcon fill="#fff" width={10} height={10} />
-                            </InfoOptionSelected>
-                        </InfoOptionForSelection>
+                        <SizeOption border={sizeSelected === 'L' && 'none'} background={sizeSelected === 'L' && '#FCEDEA'} onPress={() => setSizeSelected('L')}>
+                            <SizeOptionText color={sizeSelected === 'L' && defaultColor}>L</SizeOptionText>
+                        </SizeOption>
 
-                        <InfoOptionForSelection onPress={() => setColorSelected(3)} background={color3}>
-                            <InfoOptionSelected opacity={colorSelected === 3 ? 1 : 0}>
-                                <CheckIcon fill="#fff" width={10} height={10} />
-                            </InfoOptionSelected>
-                        </InfoOptionForSelection>
+                        <SizeOption border={sizeSelected === 'XL' && 'none'} background={sizeSelected === 'XL' && '#FCEDEA'} onPress={() => setSizeSelected('XL')}>
+                            <SizeOptionText color={sizeSelected === 'XL' && defaultColor}>XL</SizeOptionText>
+                        </SizeOption>
+                    </View>
+                </SizeArea>
 
-                        <InfoOptionForSelection onPress={() => setColorSelected(4)} background={color4}>
-                            <InfoOptionSelected opacity={colorSelected === 4 ? 1 : 0}>
-                                <CheckIcon fill="#fff" width={10} height={10} />
-                            </InfoOptionSelected>
-                        </InfoOptionForSelection>
+                <ColorArea>
+                    <ColorOption onPress={() => setColorSelected(1)} background={color1}>
+                        <ColorOptionIcon opacity={colorSelected === 1 && 1}>
+                            <CheckIcon fill="#fff" width={10} height={10} />
+                        </ColorOptionIcon>
+                    </ColorOption>
+                    
+                    <ColorOption onPress={() => setColorSelected(2)} background={color2}>
+                        <ColorOptionIcon opacity={colorSelected === 2 && 1}>
+                            <CheckIcon fill="#fff" width={10} height={10} />
+                        </ColorOptionIcon>                    
+                    </ColorOption>
+                
+                    <ColorOption onPress={() => setColorSelected(3)} background={color3}>
+                        <ColorOptionIcon opacity={colorSelected === 3 && 1}>
+                            <CheckIcon fill="#fff" width={10} height={10} />
+                        </ColorOptionIcon>                    
+                    </ColorOption>
+                </ColorArea>
+            </SizeAndColorArea>
+        )
+    }
 
-                    </InfoSelectOptions>
-                </InfoSelect>
+    const FooterComponent = () => {
+        return(
+            <FooterArea>
+                <DetailsAndReviewButton>
+                    <DefaultButton>
+                        <DefaultButtonText>Details</DefaultButtonText>
+                    </DefaultButton>
 
-                <InfoSelect>
-                    <InfoSelectTitle>Size</InfoSelectTitle>
+                    <DefaultButton>
+                        <DefaultButtonText>Review</DefaultButtonText>
+                    </DefaultButton>
+                </DetailsAndReviewButton>
 
-                    <InfoSelectOptions>
-                        <InfoOptionForSelection onPress={() => setSizeSelected('S')} background={sizeSelected === 'S' && '#000'}>
-                            <InfoOptionForSelectionText color={sizeSelected === 'S' && '#fff'}>S</InfoOptionForSelectionText>
-                        </InfoOptionForSelection>
-
-                        <InfoOptionForSelection onPress={() => setSizeSelected('M')} background={sizeSelected === 'M' && '#000'}>
-                            <InfoOptionForSelectionText color={sizeSelected === 'M' && '#fff'}>M</InfoOptionForSelectionText>
-                        </InfoOptionForSelection>
-
-                        <InfoOptionForSelection onPress={() => setSizeSelected('L')} background={sizeSelected === 'L' && '#000'}>
-                            <InfoOptionForSelectionText color={sizeSelected === 'L' && '#fff'}>L</InfoOptionForSelectionText>
-                        </InfoOptionForSelection>
-                    </InfoSelectOptions>
-                </InfoSelect>
-            </>
+                <DetailsArea>
+                    <DetailsDescription>
+                        This hoodie sweater is perfect for autumn and winter. It's made in a slightly heavier fleece
+                        fabric, making you ready for the cold season in an instant.
+                    </DetailsDescription>
+                </DetailsArea>
+            </FooterArea>
         )
     }
 
@@ -105,6 +121,7 @@ export default function Product() {
             <StatusBar translucent={true} backgroundColor="transparent" /> 
 
             <Swiper
+                style={{backgroundColor: '#f7f8fa'}}
                 dot={
                     <View
                       style={{
@@ -135,46 +152,27 @@ export default function Product() {
                     />
                 }
             >
-                <HeaderArea source={require('../../assets/img/product2.jpg')} />
-                <HeaderArea source={require('../../assets/img/product1.jpg')} />
-                <HeaderArea source={require('../../assets/img/product2.jpg')} />
+                <HeaderArea resizeMode="center" source={require('../../assets/img/women.png')} />
+                <HeaderArea resizeMode="center" source={require('../../assets/img/women.png')} />
+                <HeaderArea resizeMode="center" source={require('../../assets/img/women.png')} />
             </Swiper>
                
             <InfoArea>
                 <ScrollView contentContainerStyle={{paddingVertical: 20}}>
                     <InfoHeader>
                         <InfoHeaderText>Corduroy Cap</InfoHeaderText>
+                        <PriceValue>R$ 99,90</PriceValue>
                     </InfoHeader>
-
-                    <InfoDescription>
-                        A corduroy cap will perfectly complement your image. This hat is suitable
-                        for both the classic style and for casual style.
-                    </InfoDescription>
-
-                    <RateAndPriceArea>
-                        <RateArea>
-                            <StarIcon fill="#000" width={25} height={25} />
-                            <RateValue>4.8</RateValue>
-                            <RateQuantity>(150)</RateQuantity>
-                        </RateArea>
-
-                        <PriceArea>
-                            <PriceValue>R$ 99,90</PriceValue>
-                            <PriceOlderValue>R$ 120</PriceOlderValue>
-                        </PriceArea>
-                    </RateAndPriceArea>
 
                     <InfoSelectComponent />
 
-                    <RowButtons>
-                        <SaveProductButton underlayColor={defaultColor} onPress={() => console.log('olá mundo')}>
-                            <BookmarkIcon fill="#000" width={25} height={25} />
-                        </SaveProductButton>
-                        
-                        <AddToCartButton>
-                            <AddToCartText>Add to Cart</AddToCartText>
-                        </AddToCartButton>
-                    </RowButtons>
+                    <FooterComponent />
+
+                    <AddToCartButton>
+                        <ShoppingBasketIcon fill="#fff" width={20} height={20} />
+                        <AddToCartText>Add to cart</AddToCartText>
+                    </AddToCartButton>
+
                 </ScrollView>
             </InfoArea>
         </ProductContainer>
