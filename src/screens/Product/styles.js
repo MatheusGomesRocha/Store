@@ -46,7 +46,7 @@ export const SizeText = styled.Text`
 `;
 export const SizeOption = styled.TouchableOpacity`
     background: ${props=>props.background || 'transparent'};
-    border: ${props=>props.border || '1px solid #afb2b1'};
+    border: ${props=>props.border || '1px solid #e6e8eb'};      /** gray100 */
     align-items: center;
     justify-content: center;
     width: 50px;
@@ -55,7 +55,7 @@ export const SizeOption = styled.TouchableOpacity`
     margin-right: 15px;
 `;
 export const SizeOptionText = styled.Text`
-    color: ${props=>props.color || '#afb2b1'};
+    color: ${props=>props.color || '#afb2b1'};          /** gray200 */
     font-weight: bold;
 `;
 export const ColorArea = styled.View`
@@ -69,6 +69,7 @@ export const ColorOption = styled.TouchableOpacity`
     margin-top: 10px;
 `;
 export const ColorOptionIcon = styled.View`
+    opacity: ${props=>props.opacity || 0};
     background: #000;
     align-items: center;
     justify-content: center;
@@ -78,15 +79,44 @@ export const ColorOptionIcon = styled.View`
     width: 15px;
     height: 15px;
     border-radius: 10px;
-    opacity: ${props=>props.opacity || 0};
 `;
 
-export const FooterArea = styled.View``;
-export const DetailsAndReviewButton = styled.View``;
-export const DefaultButton = styled.TouchableOpacity``;
-export const DefaultButtonText = styled.Text``;
-export const DetailsArea = styled.View``;
-export const DetailsDescription = styled.Text``;
+export const FooterArea = styled.View`
+    margin-top: 30px;
+`;
+export const DetailsAndReviewButton = styled.View`
+    flex-direction: row;
+`;
+export const DefaultButton = styled.TouchableOpacity`
+    border-bottom-color: ${props=>props.borderColor || 'transparent'};
+    border-bottom-width: 2px;
+    margin-right: 20px;
+    width: 100px;
+`;
+export const DefaultButtonText = styled.Text`
+    color: ${props=>props.color || '#afb2b1'};
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 5px;
+`;
+export const DetailsDescription = styled.Text`
+    color: ${gray500};
+    margin-top: 15px;
+    font-size: 17px;
+    line-height: 25px;
+`;
 
-export const AddToCartButton = styled.TouchableOpacity``;
-export const AddToCartText = styled.Text``;
+export const AddToCartButton = styled.TouchableOpacity`
+    background: ${defaultColor};
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    margin-top: 15px;
+    border-radius: 10px;
+`;
+export const AddToCartText = styled.Text`
+    color: ${white};
+    margin-left: 15px;
+    font-size: 20px;
+`;

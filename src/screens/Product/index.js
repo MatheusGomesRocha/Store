@@ -30,7 +30,6 @@ import {
     DetailsAndReviewButton,
     DefaultButton,
     DefaultButtonText,
-    DetailsArea,
     DetailsDescription,
 
     AddToCartButton,
@@ -40,6 +39,7 @@ import {
 export default function Product() {
     const [colorSelected, setColorSelected] = useState(1);
     const [sizeSelected, setSizeSelected] = useState('M');
+    const [detailOrReview, setDetailOrReview] = useState('detail');
 
     const color1 = '#8257e5';
     const color2 = '#F96332';
@@ -97,21 +97,19 @@ export default function Product() {
         return(
             <FooterArea>
                 <DetailsAndReviewButton>
-                    <DefaultButton>
-                        <DefaultButtonText>Details</DefaultButtonText>
+                    <DefaultButton borderColor={detailOrReview === 'detail' && defaultColor} onPress={() => setDetailOrReview('detail')}>
+                        <DefaultButtonText color={detailOrReview === 'detail' && defaultColor}>Details</DefaultButtonText>
                     </DefaultButton>
 
-                    <DefaultButton>
-                        <DefaultButtonText>Review</DefaultButtonText>
+                    <DefaultButton borderColor={detailOrReview === 'review' && defaultColor} onPress={() => setDetailOrReview('review')}>
+                        <DefaultButtonText color={detailOrReview === 'review' && defaultColor}>Review</DefaultButtonText>
                     </DefaultButton>
                 </DetailsAndReviewButton>
 
-                <DetailsArea>
-                    <DetailsDescription>
-                        This hoodie sweater is perfect for autumn and winter. It's made in a slightly heavier fleece
-                        fabric, making you ready for the cold season in an instant.
-                    </DetailsDescription>
-                </DetailsArea>
+                <DetailsDescription>
+                    This hoodie sweater is perfect for autumn and winter. It's made in a slightly heavier fleece
+                    fabric, making you ready for the cold season in an instant.
+                </DetailsDescription>
             </FooterArea>
         )
     }
@@ -169,7 +167,7 @@ export default function Product() {
                     <FooterComponent />
 
                     <AddToCartButton>
-                        <ShoppingBasketIcon fill="#fff" width={20} height={20} />
+                        <ShoppingBasketIcon fill="#fff" width={25} height={25} />
                         <AddToCartText>Add to cart</AddToCartText>
                     </AddToCartButton>
 

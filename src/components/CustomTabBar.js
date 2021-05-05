@@ -13,8 +13,6 @@ const CustomTabBarContainer = styled.View`
     background: #000;
     display: ${props=>props.display || 'flex'};
     border-width: 1px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
     border-bottom-width: 0;
     border-left-width: 0;
     border-right-width: 0;
@@ -44,8 +42,7 @@ export default ({ state, descriptors, navigation, index }) => {          /** Pro
     }
 
     return (
-        <View style={{backgroundColor: state.index == 1 ? '#000' : white}}>
-            <CustomTabBarContainer>
+            <CustomTabBarContainer style={{display: state.index === 1 && 'none'}}>
 
                 <CustomTabBarTouch key={index} onPress={() => goTo('home')}>
                     <CustomTabBarPressed background={state.index === 0 && "rgba(255, 255, 255, 0.2)"} >
@@ -84,6 +81,5 @@ export default ({ state, descriptors, navigation, index }) => {          /** Pro
                 </CustomTabBarTouch>
 
             </CustomTabBarContainer>
-        </View>
     );
 }
