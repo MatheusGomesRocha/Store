@@ -49,9 +49,22 @@ export const CartArea = styled.View`
     padding: 0 15px;
 `;
 export const CartTitle = styled.Text`
-    font-size: 22px;
     font-weight: bold;
     text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+`;
+export const HeaderArea = styled.View`
+    margin: 20px;
+    border-bottom-width: 1px;
+    border-bottom-color: ${gray200};
+    flex-direction: row;
+    justify-content: space-between;
+`;
+export const HeaderText = styled.Text`
+    margin-bottom: 20px;
+    font-size: 17px;
+    font-weight: bold;
 `;
 export const CartLeftColumn = styled.View`
 `;
@@ -124,29 +137,7 @@ export const CartDeleteButton = styled.TouchableOpacity`
     border-radius: 10px;
 `;
 
-export const BuyNowArea = styled.View`
-    background: ${white};
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    height: 125px;
-    border: 1px solid ${gray100};
-`;
-export const BuyNowHeader = styled.View`
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 15px;
-    padding: 0 20px;
-`;
-export const SubtotalText = styled.Text`
-    color: ${gray200};
-    font-size: 16px;
-`;
-export const SubtotalValue = styled.Text`
-    font-weight: bold;
-    color: ${gray800};
-    font-size: 18px;
-`;
-export const BuyNowButton = styled.TouchableOpacity`
+export const FinishOrderButton = styled.TouchableOpacity`
     background: ${defaultColor};
     align-items: center;
     justify-content: center;
@@ -155,7 +146,7 @@ export const BuyNowButton = styled.TouchableOpacity`
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 `;
-export const BuyNowText = styled.Text`
+export const FinishOrderText = styled.Text`
     color: ${white};
     font-size: 20px;
 `;

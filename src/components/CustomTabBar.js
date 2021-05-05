@@ -42,7 +42,7 @@ export default ({ state, descriptors, navigation, index }) => {          /** Pro
     }
 
     return (
-            <CustomTabBarContainer style={{display: state.index === 1 && 'none'}}>
+            <CustomTabBarContainer display={state.index === 1 && 'none'}>
 
                 <CustomTabBarTouch key={index} onPress={() => goTo('home')}>
                     <CustomTabBarPressed background={state.index === 0 && "rgba(255, 255, 255, 0.2)"} >
