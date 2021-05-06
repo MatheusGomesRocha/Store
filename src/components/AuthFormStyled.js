@@ -4,9 +4,6 @@ import { white, gray50, gray500, gray100, defaultColor } from '../styles';
 export const LoginContainer = styled.SafeAreaView`
     flex: 1;
     background: ${white};
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
 `;
 
 export const LogoContainer = styled.View`
