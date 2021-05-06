@@ -80,7 +80,6 @@ export const ProductsImg = styled.Image`
     height: 200px;
 `;
 export const ProductsFavoriteButton = styled.TouchableOpacity`
-    background: #000;
     align-items: center;
     justify-content: center;
     position: absolute;

@@ -93,7 +93,7 @@ export default function Home() {
                             <ProductsImgContainer>
                                 <ProductsImg resizeMode="center" source={item.img} />
                                 <ProductsFavoriteButton>
-                                    <FavoriteIcon fill="#fff" width={20} height={20} />
+                                    <FavoriteIcon fill="#000" width={25} height={25} />
                                 </ProductsFavoriteButton>
                             </ProductsImgContainer>
 
@@ -124,7 +124,7 @@ export default function Home() {
                             <ProductsImgContainer>
                                 <ProductsImg resizeMode="center" source={item.img} />
                                 <ProductsFavoriteButton>
-                                    <FavoriteIcon fill="#fff" width={20} height={20} />
+                                    <FavoriteIcon fill="#000" width={25} height={25} />
                                 </ProductsFavoriteButton>
                             </ProductsImgContainer>
 
@@ -155,7 +155,7 @@ export default function Home() {
                             <ProductsImgContainer>
                                 <ProductsImg resizeMode="center" source={item.img} />
                                 <ProductsFavoriteButton>
-                                    <FavoriteIcon fill="#fff" width={20} height={20} />
+                                    <FavoriteIcon fill="#000" width={25} height={25} />
                                 </ProductsFavoriteButton>
                             </ProductsImgContainer>
 
