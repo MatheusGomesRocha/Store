@@ -53,8 +53,8 @@ export const ProductsHeaderRow = styled.View`
     margin: 0 15px;
 `;
 export const ProductsTitle = styled.Text`
-    font-size: 20px;
     font-weight: bold;
+    font-size: 20px;
 `;
 export const ProductsSmallTitle = styled.Text`
     color: ${gray200};
