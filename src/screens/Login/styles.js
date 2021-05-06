@@ -28,13 +28,20 @@ export const Title = styled.Text`
     font-size: 20px;
     margin-top: 10px;
 `;
+export const GoToView = styled.View`
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+`;
 export const GoToText = styled.Text`
     color: ${gray500};
-    margin-top: 10px;
     font-size: 17px;
 `;
-export const GoToButton = styled.TouchableOpacity``;
-export const GoToButtonText = styled.Text``;
+export const GoToButtonText = styled.Text`
+    color: ${defaultColor};
+    text-decoration: underline;
+    font-size: 17px;
+`;
 
 export const SocialLoginContainer = styled.View`
     flex-direction: row;

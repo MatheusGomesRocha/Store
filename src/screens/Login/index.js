@@ -15,8 +15,8 @@ import {
     LogoImg,
 
     Title,
+    GoToView,
     GoToText,
-    GoToButton,
     GoToButtonText,
 
     SocialLoginContainer,
@@ -53,7 +53,12 @@ export default() => {
             </LogoContainer>
 
             <Title>Login in to Store</Title>
-            <GoToText>Don't have an account? Sign Up</GoToText>
+            <GoToView>
+                <GoToText>Don't have an account? </GoToText>
+                <TouchableOpacity>
+                    <GoToButtonText>Sign Up</GoToButtonText>
+                </TouchableOpacity>
+            </GoToView>
 
             <SocialLoginContainer>
                 <SocialLoginButton background="#3b5998">
