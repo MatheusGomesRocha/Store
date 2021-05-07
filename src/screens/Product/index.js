@@ -131,7 +131,7 @@ export default function Product() {
                         marginLeft: 3,
                         marginRight: 3,
                         marginTop: 3,
-                        marginBottom: 190
+                        marginBottom: 240
                       }}
                     />
                 }
@@ -145,7 +145,7 @@ export default function Product() {
                         marginLeft: 3,
                         marginRight: 3,
                         marginTop: 3,
-                        marginBottom: 190
+                        marginBottom: 240
                       }}
                     />
                 }

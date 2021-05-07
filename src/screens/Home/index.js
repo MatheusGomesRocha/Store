@@ -5,7 +5,8 @@ import { useNavigation } from '@react-navigation/core';
 import SearchIcon from '../../assets/svg/search.svg';
 import AdjustIcon from '../../assets/svg/adjust.svg';
 import FavoriteIcon from '../../assets/svg/heart.svg';
-import MenuGridIcon from '../../assets/svg/menu-grid.svg';
+import MenuGridIcon from '../../assets/svg/menu-grid.svg'; 
+import ConfigIcon from '../../assets/svg/config.svg'; 
 
 import {
     HomeContainer,
@@ -183,7 +184,7 @@ export default function Home() {
                     </HeaderButton>
 
                     <HeaderButton>
-                        <AdjustIcon fill="#000" width={20} height={20}/>
+                        <ConfigIcon fill="#000" width={25} height={25}/>
                     </HeaderButton>
                 </Header>
 
