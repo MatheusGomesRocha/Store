@@ -1,48 +1,48 @@
 import styled from 'styled-components/native';
-import { defaultColor, gray100, gray200, gray500, white } from '../../styles';
+import { gray200, white } from '../../styles';
 
 export const PresentationContainer = styled.SafeAreaView`
     background: ${white};
     flex: 1;
     align-items: center;
-    padding: 20px;
 `;
 export const Title = styled.Text`
     font-weight: bold;
     text-align: center;
-    font-size: 28px;
+    font-size: 25px;
+    margin-top: 30px;
+    width: 90%;
 `;
 export const SmallTitle = styled.Text`
-    margin-top: 15px;
     color: ${gray200};
+    margin-top: 10px;
+    font-size: 17px;
 `;
 export const Img = styled.Image`
-    width: 450px;
-    height: 450px;
-    margin-top: 20px;
+    width: 400px;
+    height: 400px;
 `;
-export const LoginButton = styled.TouchableOpacity`
+export const GetStartedButton = styled.TouchableOpacity`
     background: #000;
     align-items: center;
     justify-content: center;
-    margin-top: auto;
-    width: 100%;
+    width: 90%;
     height: 64px;
     border-radius: 15px;
 `;
-export const LoginButtonText = styled.Text`
+export const GetStartedText = styled.Text`
     color: ${white};
     font-size: 20px;
 `;
-export const SignUpContainer = styled.View`
+export const LoginContainer = styled.View`
     flex-direction: row;
-    margin-top: 10px;
+    margin: 10px 0 50px 0;
 `;
-export const SignUpText = styled.Text`
+export const LoginText = styled.Text`
     color: ${gray200};
     font-size: 17px;
 `;
-export const SignUpLink = styled.Text`
+export const LoginLink = styled.Text`
     font-weight: bold;
     text-decoration: underline;
     font-size: 18px;
