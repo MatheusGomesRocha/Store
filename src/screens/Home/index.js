@@ -37,11 +37,25 @@ import {
 import { defaultColor } from '../../styles';
 
 export default function Home() {
-    const productArray = [
+    const recommendedArray = [
         {id: 1, img: require('../../assets/img/dress2.png'), name: 'Winter Dress', price: 185.41},
         {id: 2, img: require('../../assets/img/shirt2.png'), name: 'Snicker Air Jordan XXL', price: 90.00},
         {id: 3, img: require('../../assets/img/shirt3.png'), name: 'Apple Watch', price: 110.90},
         {id: 4, img: require('../../assets/img/dress2.png'), name: 'Cowboy hat', price: 99.90},
+    ];
+
+    const topCollectionArray = [
+        {id: 1, img: require('../../assets/img/shirt2.png'), name: 'Winter Dress', price: 185.41},
+        {id: 2, img: require('../../assets/img/shirt3.png'), name: 'Snicker Air Jordan XXL', price: 90.00},
+        {id: 3, img: require('../../assets/img/dress2.png'), name: 'Apple Watch', price: 110.90},
+        {id: 4, img: require('../../assets/img/shirt3.png'), name: 'Cowboy hat', price: 99.90},
+    ];
+
+    const upcomingArray = [
+        {id: 1, img: require('../../assets/img/shirt2.png'), name: 'Winter Dress', price: 185.41},
+        {id: 2, img: require('../../assets/img/dress2.png'), name: 'Snicker Air Jordan XXL', price: 90.00},
+        {id: 3, img: require('../../assets/img/shirt3.png'), name: 'Apple Watch', price: 110.90},
+        {id: 4, img: require('../../assets/img/shirt2.png'), name: 'Cowboy hat', price: 99.90},
     ];
 
     const [filter, setFilter] = useState('all');
@@ -89,7 +103,7 @@ export default function Home() {
                 </ProductsHeader>
 
                 <ScrollView horizontal={true}>
-                    {productArray.map((item, k) => (
+                    {recommendedArray.map((item, k) => (
                         <ProductsItem key={k} onPress={() => navigation.navigate('product')}>
                             <ProductsImgContainer>
                                 <ProductsImg resizeMode="center" source={item.img} />
@@ -120,7 +134,7 @@ export default function Home() {
                 </ProductsHeaderRow>
 
                 <ScrollView horizontal={true}>
-                    {productArray.map((item, k) => (
+                    {topCollectionArray.map((item, k) => (
                         <ProductsItem key={k} onPress={() => navigation.navigate('product')}>
                             <ProductsImgContainer>
                                 <ProductsImg resizeMode="center" source={item.img} />
@@ -151,7 +165,7 @@ export default function Home() {
                 </ProductsHeaderRow>
 
                 <ScrollView horizontal={true}>
-                    {productArray.map((item, k) => (
+                    {upcomingArray.map((item, k) => (
                         <ProductsItem key={k} onPress={() => navigation.navigate('product')}>
                             <ProductsImgContainer>
                                 <ProductsImg resizeMode="center" source={item.img} />
