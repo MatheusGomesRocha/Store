@@ -117,10 +117,9 @@ export default function Home() {
                         contentContainerStyle={{paddingVertical: 25}}
                         ListHeaderComponent={
                             <>
-                                <CartTitle>Cart</CartTitle>
                                 <HeaderArea>
-                                    <HeaderText>5 items</HeaderText>
-                                    <HeaderText style={{color: defaultColor}}>R$ 471,50 total</HeaderText>
+                                    <CartTitle>Cart</CartTitle>
+                                    <HeaderText style={{color: defaultColor}}>R$ 471,50</HeaderText>
                                 </HeaderArea>
                             </>
                         }

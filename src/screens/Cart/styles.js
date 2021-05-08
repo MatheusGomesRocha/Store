@@ -48,23 +48,21 @@ export const CartArea = styled.View`
     margin: 20px 20px 0 20px;
     padding: 0 15px;
 `;
+export const HeaderArea = styled.View`
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+`;
 export const CartTitle = styled.Text`
     font-weight: bold;
     text-align: center;
-    font-size: 22px;
-    margin-bottom: 20px;
-`;
-export const HeaderArea = styled.View`
-    margin: 20px;
-    border-bottom-width: 1px;
-    border-bottom-color: ${gray200};
-    flex-direction: row;
-    justify-content: space-between;
+    font-size: 30px;
 `;
 export const HeaderText = styled.Text`
-    margin-bottom: 20px;
     font-size: 17px;
     font-weight: bold;
+    margin-left: auto;
 `;
 export const CartLeftColumn = styled.View`
 `;

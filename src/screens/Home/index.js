@@ -39,8 +39,8 @@ import { defaultColor } from '../../styles';
 export default function Home() {
     const productArray = [
         {id: 1, img: require('../../assets/img/dress2.png'), name: 'Winter Dress', price: 185.41},
-        {id: 2, img: require('../../assets/img/dress2.png'), name: 'Snicker Air Jordan XXL', price: 90.00},
-        {id: 3, img: require('../../assets/img/dress2.png'), name: 'Apple Watch', price: 110.90},
+        {id: 2, img: require('../../assets/img/shirt2.png'), name: 'Snicker Air Jordan XXL', price: 90.00},
+        {id: 3, img: require('../../assets/img/shirt3.png'), name: 'Apple Watch', price: 110.90},
         {id: 4, img: require('../../assets/img/dress2.png'), name: 'Cowboy hat', price: 99.90},
     ];
 
