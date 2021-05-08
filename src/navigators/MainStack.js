@@ -4,6 +4,7 @@ import ProductScreen from '../screens/Product';
 import LoginScreen from '../screens/Login';
 import RegisterScreen from '../screens/Register';
 import PresentationScreen from '../screens/Presentation';
+import AccountScreen from '../screens/Account';
 import AppTab from './AppTab';
 
 const MainStack = createStackNavigator();
@@ -16,6 +17,7 @@ export default () => {
             <MainStack.Screen name="login" component={LoginScreen} options={{headerTitle: null, headerTransparent: true}}/>
             <MainStack.Screen name="register" component={RegisterScreen} options={{headerTitle: null, headerTransparent: true}}/>
             <MainStack.Screen name="presentation" component={PresentationScreen} options={{headerTitle: null, headerTransparent: true}}/>
+            <MainStack.Screen name="account" component={AccountScreen} options={{headerTitle: null, headerTransparent: true}}/>
         </MainStack.Navigator>
     )
 }

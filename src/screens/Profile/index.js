@@ -96,7 +96,7 @@ export default function Home() {
                         <ProfileItemSmallerTitle>Personal Info</ProfileItemSmallerTitle>
                     </ProfileItemInfo>
 
-                    <ProfileItemButton>
+                    <ProfileItemButton onPress={() => navigation.navigate('account')}>
                         <AngleRightIcon fill="#000" width={15} height={15} />
                     </ProfileItemButton>
                 </ProfileItem>
