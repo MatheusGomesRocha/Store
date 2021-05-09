@@ -1,5 +1,5 @@
-import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { ScrollView, TouchableOpacity } from 'react-native';
 
 import CheckIcon from '../../assets/svg/check.svg';
 import MaleIcon from '../../assets/svg/male.svg';
@@ -26,52 +26,58 @@ import {
 } from './styles';
 
 export default() => {
+    const [gender, setGender] = useState('');
+
     return(
         <AccountContainer>
-            <AccountConfirmButton>
-                <CheckIcon fill="#fff" width={15} height={15} />
-            </AccountConfirmButton>
+            <ScrollView contentContainerStyle={{padding: 40}}>
+                <AccountConfirmButton>
+                    <CheckIcon fill="#fff" width={20} height={20} />
+                </AccountConfirmButton>
 
-            <AccountTitle>Account</AccountTitle>
+                <AccountTitle>Account</AccountTitle>
 
-            <AccountItem>
-                <AccountItemTitle>Photo</AccountItemTitle>
+                <AccountItem style={{alignItems: 'flex-start'}}>
+                    <AccountItemTitle>Photo</AccountItemTitle>
 
-                <AccountItemPhotoContainer>
-                    <AccountItemImgContainer source={require('../../assets/img/Eu.jpeg')} />
-                    <TouchableOpacity>
-                        <AccountItemImgUpload>Upload Image</AccountItemImgUpload>
-                    </TouchableOpacity>
-                </AccountItemPhotoContainer>
-            </AccountItem>
+                    <AccountItemPhotoContainer>
+                        <AccountItemImgContainer>
+                            <AccountItemImg source={require('../../assets/img/Eu.jpeg')} />
+                        </AccountItemImgContainer>
+                        <TouchableOpacity style={{marginTop: 20}}>
+                            <AccountItemImgUpload>Upload Image</AccountItemImgUpload>
+                        </TouchableOpacity>
+                    </AccountItemPhotoContainer>
+                </AccountItem>
 
-            
-            <AccountItem>
-                <AccountItemTitle>Name</AccountItemTitle>
-                <AccountItemInput placeholder="Name" />
-            </AccountItem>
+                
+                <AccountItem>
+                    <AccountItemTitle>Name</AccountItemTitle>
+                    <AccountItemInput defaultValue="Matheus Gomes" />
+                </AccountItem>
 
-            <AccountItem>
-                <AccountItemTitle>Age</AccountItemTitle>
-                <AccountItemInput placeholder="24" />
-            </AccountItem>
+                <AccountItem>
+                    <AccountItemTitle>Age</AccountItemTitle>
+                    <AccountItemInput defaultValue="24" />
+                </AccountItem>
 
-            <AccountItem>
-                <AccountItemTitle>Gender</AccountItemTitle>
+                <AccountItem>
+                    <AccountItemTitle>Gender</AccountItemTitle>
 
-                <AccountItemGenderButton>
-                    <FemaleIcon fill="#fff" width={15} height={15} />
-                </AccountItemGenderButton>
+                    <AccountItemGenderButton background={gender === 'female' && '#fe705f'} onPress={() => setGender('female')}>
+                        <FemaleIcon fill={gender === 'female' ? '#fff' : '#808080'} width={22} height={22} />
+                    </AccountItemGenderButton>
 
-                <AccountItemGenderButton>
-                    <MaleIcon fill="#fff" width={15} height={15} />
-                </AccountItemGenderButton>
-            </AccountItem>
+                    <AccountItemGenderButton background={gender === 'male' && '#fe705f'} onPress={() => setGender('male')}>
+                        <MaleIcon fill={gender === 'male' ? '#fff' : '#808080'} width={22} height={22} />
+                    </AccountItemGenderButton>
+                </AccountItem>
 
-            <AccountItem>
-                <AccountItemTitle>Email</AccountItemTitle>
-                <AccountItemInput placeholder="matheusgomes192@hotmail.com" />
-            </AccountItem>
+                <AccountItem>
+                    <AccountItemTitle>Email</AccountItemTitle>
+                    <AccountItemInput defaultValue="matheusgomes192@hotmail.com" />
+                </AccountItem>
+            </ScrollView>
             
         </AccountContainer>
     )
