@@ -127,7 +127,7 @@ export default function Home() {
                         renderItem={({ item }) => <CartIsNotEmptyComponent item={item} />}
                         keyExtractor={(item) => item.id}
                     />
-                    <FinishOrderButton>
+                    <FinishOrderButton onPress={() => navigation.navigate('payment')}>
                         <FinishOrderText>Finish your order</FinishOrderText>
                     </FinishOrderButton>
                 </>
