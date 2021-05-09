@@ -1,6 +1,6 @@
-# **Podcastr**
+# **Store**
 
-Esse projeto foi feito para ser um Dashboard para gerenciar um sistema, mas ainda não tem todas as Features que eu quero, como os gráficos e etc.
+Projeto feito apenas com objetivo de criar algumas telas para fazer um e-commerce, onde o usuário faz pedido, paga pelo próprio app e etc. Ainda não incluído o backend, irei fazer futuramente com Node.
 
 ---
 
